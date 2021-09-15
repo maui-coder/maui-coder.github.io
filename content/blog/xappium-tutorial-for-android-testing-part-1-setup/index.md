@@ -102,13 +102,17 @@ Add the following content to the `uitest.json`
 	"appPath": "/Users/myuser/Downloads/Android-NativeDemoApp-0.4.0.apk",
 	"deviceName": "Pixel 3a Droid10",
 	
-	"capabilities": {
-	  "avd": "Pixel_3a_Droid10",
-    "allowDelayAdb": "false",
-	  "appWaitActivity": "*.MainActivity",
-	  "forceEspressoRebuild": "false",
-	  "appium:fullReset": "true"
-	}
+  "capabilities": {
+    "avd": "Pixel_3a_Droid10",
+		"allowDelayAdb": "false",
+    "appWaitActivity": "*.MainActivity",
+    "forceEspressoRebuild": "false",
+    "avdLaunchTimeout": "120000",
+    "avdReadyTimeout": "300000",
+    "espressoBuildConfig": "{ \"additionalAndroidTestDependencies\": [ \"androidx.lifecycle:lifecycle-common:2.2.0\" ], \"additionalAppDependencies\": [ \"androidx.lifecycle:lifecycle-common:2.2.0\" ] }",
+    "showGradleLog": "true",
+    "appium:fullReset": "true"
+  }
 }
 ```
 
@@ -124,13 +128,15 @@ Add the following content to the `uitest.json`
 
 > `avd` : this capability is Android only, it allows Appium Server to start emulator if it is not running yet.
 >
-> `allowDelayAdb`: See https://github.com/appium/appium/issues/14773
+> `allowDelayAdb`:This is optional, but if you run into Failed to connect to Android emulator, set it to `false`. See https://github.com/appium/appium/issues/14773
 >
 > `appWaitActivity`: at least this or `appActivity` is required by appium. It often is named `MainActivity`. However, it is not always the case. Check out [this post](https://mauiautomation.com/determine-android-app-activity-using-adb/) for more details.
 
 ​		Espresso capabilities:
 
 > `forceEspressoRebuild` : If there are ever problems starting a session, try setting the capability `true` and retrying. This will rebuild a fresh Espresso Server APK. If the session is successfull, set it back to `false` so that it doesn't re-install on every single test.
+>
+> `espressoBuildConfig` : https://github.com/appium/appium-espresso-driver#espresso-build-config
 >
 > `appium:fullReset`: (default is false) this is set to `true` to ensure app is uninstall and reinstall on each test run, as there might be some issue if the app was already there before the test run.
 >

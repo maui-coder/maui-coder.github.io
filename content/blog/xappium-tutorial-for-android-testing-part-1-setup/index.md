@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Xappium UI Test tutorial for mobile automation - getting started Android"
-subtitle: "Setup Appium and writing first test for iOS & Android"
+title: "Xappium UI Test tutorial for mobile automation - Android Part 1 - Setup Project"
+subtitle: "Xappium UI Test tutorial for mobile automation - Android Part 1 - Setup Project"
 date: '2021-09-16 00:20:15'
 background: '/img/bg-about.jpg'
 ---
@@ -32,7 +32,7 @@ dotnet new classlib -o XappiumAndroidTest
 
 Add these packages to `XappiumAndroidTest.csproj`
 
-```c#
+```csharp
 <ItemGroup>
 	<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
 	<PackageReference Include="Xappium.UITest" Version="1.0.159-beta" />
@@ -43,7 +43,7 @@ Add these packages to `XappiumAndroidTest.csproj`
 
 Add `uitest.json` file in `XappiumAndroidTest` folder, and set it as embedded resource by adding this to the .csproj file
 
-```c#
+```csharp
 <ItemGroup>
   <None Remove="uitest.json" />
   <EmbeddedResource Include="uitest.json">
@@ -104,6 +104,7 @@ Add the following content to the `uitest.json`
 	
 	"capabilities": {
 	  "avd": "Pixel_3a_Droid10",
+    "allowDelayAdb": "false",
 	  "appWaitActivity": "*.MainActivity",
 	  "forceEspressoRebuild": "false",
 	  "appium:fullReset": "true"
@@ -123,11 +124,13 @@ Add the following content to the `uitest.json`
 
 > `avd` : this capability is Android only, it allows Appium Server to start emulator if it is not running yet.
 >
+> `allowDelayAdb`: See https://github.com/appium/appium/issues/14773
+>
 > `appWaitActivity`: at least this or `appActivity` is required by appium. It often is named `MainActivity`. However, it is not always the case. Check out [this post](https://mauiautomation.com/determine-android-app-activity-using-adb/) for more details.
 
 ​		Espresso capabilities:
 
-> `forceEspressoRebuild` : Whether to always enforce Espresso server rebuild, this is `false` by default.
+> `forceEspressoRebuild` : If there are ever problems starting a session, try setting the capability `true` and retrying. This will rebuild a fresh Espresso Server APK. If the session is successfull, set it back to `false` so that it doesn't re-install on every single test.
 >
 > `appium:fullReset`: (default is false) this is set to `true` to ensure app is uninstall and reinstall on each test run, as there might be some issue if the app was already there before the test run.
 >
@@ -145,15 +148,28 @@ Add `AppTest.cs` file to the folder with the following code:
 using NUnit.Framework;
 using Xappium.UITest;
 
-public class AppTests : XappiumTestBase
+namespace XappiumAndroidTest
 {
-    [Test]
-    public void AppLaunch()
+    public class AppTests : XappiumTestBase
     {
-
+        [Test]
+        public void AppLaunch()
+        {
+            
+        }
     }
 }
 ```
+
+The `XappiumTestBase` will do start `AndroidDriver` before test run and stop the driver after test done for us.
+
+
+
+We are now ready to run our first launch test.
+
+<img src="./FirstTestFolderStructure.png" alt="First test folder structure" style="zoom:50%;" />
+
+
 
 Open a terminal and start `appium` server by typing `appium`. Default address should be localhost on port `4723`
 

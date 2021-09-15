@@ -1,4 +1,124 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MAUI Coder]]></title><description><![CDATA[A blog about multiplatform UI and automation testing]]></description><link>https://mauicoder.com</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 15 Sep 2021 16:31:51 GMT</lastBuildDate><item><title><![CDATA[Xappium UI Test tutorial for mobile automation - getting started Android]]></title><description><![CDATA[https://xappium.com/ In this tutorial, we will cover how to test Android application using Xappium You will need: VSCode and dotnet…]]></description><link>https://mauicoder.com/xappium-tutorial-for-android-testing-getting-started/</link><guid isPermaLink="false">https://mauicoder.com/xappium-tutorial-for-android-testing-getting-started/</guid><pubDate>Wed, 15 Sep 2021 16:20:15 GMT</pubDate><content:encoded>&lt;img src=&quot;https://xappium.com/images/xappium-bot.png&quot; alt=&quot;img&quot; style=&quot;zoom:50%;&quot;&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MAUI Coder]]></title><description><![CDATA[A blog about multiplatform UI and automation testing]]></description><link>https://mauicoder.com</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 15 Sep 2021 23:39:29 GMT</lastBuildDate><item><title><![CDATA[Xappium UI Test tutorial for mobile automation - Android Part 2 - Page object model]]></title><description><![CDATA[Checkout Xappium docs on Page Object Model pattern. Inspect mobile app with appium desktop (see Appium Desktop overview post if this is your…]]></description><link>https://mauicoder.com/xappium-tutorial-for-android-testing-part-2-page-object-model/</link><guid isPermaLink="false">https://mauicoder.com/xappium-tutorial-for-android-testing-part-2-page-object-model/</guid><pubDate>Wed, 15 Sep 2021 22:23:15 GMT</pubDate><content:encoded>&lt;img src=&quot;https://xappium.com/images/xappium-bot.png&quot; alt=&quot;img&quot; style=&quot;zoom:50%;&quot;&gt;
+&lt;br/&gt;
+&lt;p&gt;Checkout &lt;a href=&quot;https://xappium.com/docs/page-object-model.html&quot;&gt;Xappium docs on Page Object Model&lt;/a&gt; pattern.&lt;/p&gt;
+&lt;h2&gt;Inspect mobile app with appium desktop&lt;/h2&gt;
+&lt;p&gt;(see &lt;a href=&quot;https://mauiautomation.com/appium-desktop-locate-element/&quot;&gt;Appium Desktop&lt;/a&gt; overview post if this is your first time using it)&lt;/p&gt;
+&lt;p&gt;Start Appium Desktop on port &lt;code class=&quot;language-text&quot;&gt;4725&lt;/code&gt;
+Start an inspector session with the following capabilities:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0eaa960b9e3321da6ea3fa1d38bdc623/098d4/AppiumDesktopUIInspectorSession.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 51.89873417721519%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABJ0lEQVQoz6WSzWrDMBCE9f7n3vo+hT5CDw0NCbEtW7KtP9ty7CmjVG4SGghU8MGiWa1mVxKH2mJXOUht0NQSSqmElBJ1XcMYA2vt0wgXJnRugAsDQggbFFlsHEdwrev6FGIIAdM4poPDMPwb4ZyF1gpaKXjvb1zeQz3zKEfspcXHyWBf9VCqQVVVaXZt26Y5Nk2zzScXc849nqHuDKTq0NtLYrZOse/7bZ7Uuq5LF7FojBHTNN3APWGtgfcOc4wpcZ5nnM/nFPNRmHh9ES+g/tdalgWCh9xPG4xzW4zpKH8bFqZjjkBrnTQWzq+7rCtinCFyGxeu4zYdyjp/AR2wCLtgnL7T5m9NiK9jic/DL8dTibIoUNyRH+saOnbWoFI9Xt89Xt48vgFRFAJGA4ccIQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Appium Desktop UI inspector session&quot;
+        title=&quot;Appium Desktop UI inspector session&quot;
+        src=&quot;/static/0eaa960b9e3321da6ea3fa1d38bdc623/f058b/AppiumDesktopUIInspectorSession.png&quot;
+        srcset=&quot;/static/0eaa960b9e3321da6ea3fa1d38bdc623/c26ae/AppiumDesktopUIInspectorSession.png 158w,
+/static/0eaa960b9e3321da6ea3fa1d38bdc623/6bdcf/AppiumDesktopUIInspectorSession.png 315w,
+/static/0eaa960b9e3321da6ea3fa1d38bdc623/f058b/AppiumDesktopUIInspectorSession.png 630w,
+/static/0eaa960b9e3321da6ea3fa1d38bdc623/40601/AppiumDesktopUIInspectorSession.png 945w,
+/static/0eaa960b9e3321da6ea3fa1d38bdc623/78612/AppiumDesktopUIInspectorSession.png 1260w,
+/static/0eaa960b9e3321da6ea3fa1d38bdc623/098d4/AppiumDesktopUIInspectorSession.png 2142w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Install &lt;a href=&quot;https://github.com/webdriverio/native-demo-app/releases&quot;&gt;wdio demo app&lt;/a&gt; on the device if it is not there. Android emulator installation can be done by drag and drop the &lt;code class=&quot;language-text&quot;&gt;.apk&lt;/code&gt; file to the emulator.&lt;/p&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/3d99ac3852401f9a67b67ea434486c94/4c42d/wdioApp.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 135.44303797468356%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAbCAYAAAB836/YAAAACXBIWXMAABYlAAAWJQFJUiTwAAAEc0lEQVRIx5WVW29UVRSA54/wKM888xMIEUhISIDEN3notJKI0YSkdHpLNCQ8+QRCUiKCCJJARY1RELRaLqWtD73Sy3Q6M52Zc9nnfv10733aKYghrmRN1p69znfW2muts0vv7N3LoUPvcvToUQ4ePMjhw4c5duwYJ0+e5MSJE2/V48ePc+TIEQ4cOIBkld4/dQoprh/QarcxDIM8z/k/IoSNEIIzZz6i1Nf3gf7XFeRBqEwJTNOULMv+U9M0I88zhJ8Shql6bmCgQqlcLqvF2uoz5tY2lJ1lqYJua5ZpVWsJLF4mZaMTsbW5quz+/n5Kvb19ahHlObEEFREkab4TDWhVkckXyCzIVZR6L1GMc+fOdYHS5dXfbGfVcnKadnGuSQovF8h8naYfZbiBBvZL4E7KK9/jP76j7KYZMnx1nY1WiPS9/TTi2m8uZgS/Tv3CjbNnCeevKd/BOx49Y66yK5UBCexVi7nNFsazRWV3nIwrDwK27AyZ1TeTPlcfdiCG6xuz9D34FOxx5Tv2yOWz8W1gRVc5jiNMw8DwHJIkJQx8hLmF72nHRsuk1ujogsUp9cYyvh/p5nAsXGEUVR6QwD5VPeG4+H6gDj6OYxzXVS+SLZnGoVJZadlOgReSJLEuZhTiF+2mIuwWRUu2q6m3C+TF4EYUte3K6wNQqQxS6imAdxcNpVJWPcEfy59DWsOJYPxFyNjjADOQOVqYsy+IDH0E4cxDNmeWuxH2lDXwy0VbqZQZo07lx0cIy1TA25Mu1x/bNB3AMWlPPydot5TvVPVnxuerGjgoU+7TwNCxlSZpKnPBcyIi3V6s1F2Wak7RhhmW52k/wBIeltXWLTQ42D1Dy7KxbLuYkkwNfJpqYhwFJJGvbPmfZXRIYr3n2ALLMAvg0L+L8rrsPnj5MXhlL311PTg01G3s5fk1nqzqg36ynvDxXZ9HL3UUC05KVDycZwbu1H1iK1Bre/olzuS8sodkyuVyjwYu3GF86SdlX5n0eW+sw6UJneaTdszvbd13QbLOrfsXqVb1ev2LH2hdvKeBsm3KvTpCOwhwfD0Zbcvlq4kmTcPTBfNcLEfbUZxi+g5ZnpHEMcL3cFM9NcPDI92ULdPCNC09TqFP4Bq4gVd8kQXC1ntyeoxWmygM1US1mk06zS21NzKyC7gjgQ/SoWPD1hZ5AXpTUV6X4eFhWWUNvD0dcOuvmGRhCeo1koXnZI0azC0Spm38qK6hrks+NUUuhBrD/NIlsgsXNHB0lNKHp3vZdOD01y0++bbFyot1EDW8G6dJjFXYNJhdus6fsxf1rD97Cvv2kU9MkAcB7N9PvmcPNBqMnD/fTfm7GZt7sw6srBB5Arc2Rxx6sLKKZXWwhW7eNAwJqlUSX3dAePMm/uXLxRmOdoGu2cIRHdK5Ocy1NRprVUSjSTQzTb1eVwWTUxSEIQ3DQMjU85xOFNEo4KOjo90rIN/+XAkB1SrUalBdh1aLt4ySvCa7EfYUQPl2dU3ugu/oriv1Tbp9pY78E+HfSwageqbrF+cAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;wdioApp&quot; title=&quot;wdioApp&quot; src=&quot;/static/3d99ac3852401f9a67b67ea434486c94/f058b/wdioApp.png&quot; srcset=&quot;/static/3d99ac3852401f9a67b67ea434486c94/c26ae/wdioApp.png 158w,
+/static/3d99ac3852401f9a67b67ea434486c94/6bdcf/wdioApp.png 315w,
+/static/3d99ac3852401f9a67b67ea434486c94/f058b/wdioApp.png 630w,
+/static/3d99ac3852401f9a67b67ea434486c94/4c42d/wdioApp.png 896w&quot; sizes=&quot;(max-width: 630px) 100vw, 630px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;p&gt;Start the app.&lt;/p&gt;
+&lt;p&gt;On Appium UI Inspector session Hit &lt;code class=&quot;language-text&quot;&gt;Start Session&lt;/code&gt; to connect to the device.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1cce50a98f53c475bcc286dee3fc1b1b/e04e6/InspectorSessionConnectToApp.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 58.22784810126582%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAACIElEQVQoz3WSy27TQBiFrbKjXB6FBW/AipcqC8SGDUIqqF0gARI7VpUq2CEuAtQktChxqVRCq0ZN08SN7/bMeC4fsktKCDDS0W/P5ZszZ8bb3t6m0+nQbrVot9tstdrs+zs8fXvIxm5JHo05HU9I05Q4jkmShMlkQrfbxff9v+T1+3329r7R8316PZ9dv8fBYMggyAiCgDAMG9CianCtKIqaOXWt5TnnWGzGWMI4IUkTjLVY5zDGNNJaI4S4AFVVhZsb96S2mHhC/voR4ssrrAOtK5SUZGGISFNklmGNaTaz1l6A86JAKoWQkpkxr6od7X8mvneb4uVdnBJoY5sJMs8p45gySdBKXQCVUpRlichzkumUSgiyLGv6vcpYqjgg39qg7L7ByRxtDP+KYgasdIXRGjU85qTfpxwOqbIMbS2eUpLjkxEH44ij3R2E/476cM6eu5zXb6Cm/tWTgOBogBwHVEWJsa526FDhiKy1Sf7ja+NONwvOAYu1uSQtsTpFFSFVfoYWMbrKwCk8oTQmC0n994jRQRO4+pXXvLPz6jAWnI6Zjjocfv/E4HCrUTj+CmaKx39afeR56LxDrSVlPiaNT8jTU2R5BjbB2RJvc+0JLx4/5Nn6Ks/XV1l7cJ/Wxw9/QBcvRQhJmuYIoYiihFJIikKgtcG7deMmly8tce3qMtevLLPkedxZWWkWz7Kcdzh72HUs9XdRFE2to6o3+wklIIP3Ok3fiwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;image-20210916064500011&quot;
+        title=&quot;image-20210916064500011&quot;
+        src=&quot;/static/1cce50a98f53c475bcc286dee3fc1b1b/f058b/InspectorSessionConnectToApp.png&quot;
+        srcset=&quot;/static/1cce50a98f53c475bcc286dee3fc1b1b/c26ae/InspectorSessionConnectToApp.png 158w,
+/static/1cce50a98f53c475bcc286dee3fc1b1b/6bdcf/InspectorSessionConnectToApp.png 315w,
+/static/1cce50a98f53c475bcc286dee3fc1b1b/f058b/InspectorSessionConnectToApp.png 630w,
+/static/1cce50a98f53c475bcc286dee3fc1b1b/40601/InspectorSessionConnectToApp.png 945w,
+/static/1cce50a98f53c475bcc286dee3fc1b1b/78612/InspectorSessionConnectToApp.png 1260w,
+/static/1cce50a98f53c475bcc286dee3fc1b1b/e04e6/InspectorSessionConnectToApp.png 2152w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;@content-desc&lt;/code&gt; is the Accessibily ID in Android. AccessibilyID can be added when buiding app UI b adding &lt;code class=&quot;language-text&quot;&gt;AutomationId&lt;/code&gt; in Xamarin.Forms or &lt;code class=&quot;language-text&quot;&gt;testId&lt;/code&gt; in React Native.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/effe824640c634a184d4e3b97ee5646b/f8836/SearchForElementHome.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 48.10126582278481%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAAB8klEQVQoz22SXU8TURCG99f5V7zWO29qaAnGoNBsi/VC742JCXIHJMiGxMQLr0CQhG6h0ga6Xfqxn2fP2X3MnFJCjJO8OefMzrzzzsw6r5sdttoua2uvcF2XVrtNu9nky/NnbG1u0nRdGo0GfrfLYDBgcH3NZa9HGIbkWUaaJBZJkhDHMU6t9tIm1Ov1h1OwVqtRX1lhdXWVN+vrjIKACtBlidKakv+bs7u7y97eHvv7+xwcHOB5HoeexzfP4+joiK/b21Z18Oea6TAkvOwT9fvkNzfoIKAYjShubzHTKVVV4ZRlSZomzOdz6/jX+ldXvG02GR4fMz05JTz5xZ3cT0+Jzs+ZnZ3Ze97zUbnCkaQsy9BaW0JjjIW8xS4uLmi1WgSjEZQGCgVFQaXUAkVh30Zr8jzHUUoRBAGz2QxRK1iSivm+T6fTYRyGFFoTxTFxkpDlOZlSREnCPIrsUkSEJZR2xfGYUJvF2Lu+z8bGhi1aKGULS7xsVlQJhEgbQykzlKRCJIujLO/bFrKFwv6lb5cShmObmKapPZfxAhlZEs8xulgQPl6GJSs1P4cVO134ftzjXdslGIf3342NX0JMupmmhkSVOKJOfkhpWarfTSbMJyEff0Q83VF89s748H7rgfAxUaENeTzjd6B58gleHFb8BX2A2Z0QgiGGAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Search for element home&quot;
+        title=&quot;Search for element home&quot;
+        src=&quot;/static/effe824640c634a184d4e3b97ee5646b/f058b/SearchForElementHome.png&quot;
+        srcset=&quot;/static/effe824640c634a184d4e3b97ee5646b/c26ae/SearchForElementHome.png 158w,
+/static/effe824640c634a184d4e3b97ee5646b/6bdcf/SearchForElementHome.png 315w,
+/static/effe824640c634a184d4e3b97ee5646b/f058b/SearchForElementHome.png 630w,
+/static/effe824640c634a184d4e3b97ee5646b/40601/SearchForElementHome.png 945w,
+/static/effe824640c634a184d4e3b97ee5646b/f8836/SearchForElementHome.png 1214w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;This can be confirm by searching for element with AccessibilityID Home. And we found one element, which is the Home tab button.&lt;/p&gt;
+&lt;h2&gt;Writing HomePage object&lt;/h2&gt;
+&lt;p&gt;Add &lt;code class=&quot;language-text&quot;&gt;HomePage.cs&lt;/code&gt; to the &lt;code class=&quot;language-text&quot;&gt;XappiumAndroidTest&lt;/code&gt; folder.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Xappium UI Test tutorial for mobile automation - Android Part 1 - Setup Project]]></title><description><![CDATA[https://xappium.com/ In this tutorial, we will cover how to test Android application using Xappium You will need: VSCode and dotnet…]]></description><link>https://mauicoder.com/xappium-tutorial-for-android-testing-part-1-setup/</link><guid isPermaLink="false">https://mauicoder.com/xappium-tutorial-for-android-testing-part-1-setup/</guid><pubDate>Wed, 15 Sep 2021 16:20:15 GMT</pubDate><content:encoded>&lt;img src=&quot;https://xappium.com/images/xappium-bot.png&quot; alt=&quot;img&quot; style=&quot;zoom:50%;&quot;&gt;
 &lt;p&gt;&lt;a href=&quot;https://xappium.com/&quot;&gt;https://xappium.com/&lt;/a&gt;&lt;/p&gt;
 &lt;br/&gt;
 &lt;p&gt;In this tutorial, we will cover how to test Android application using &lt;a href=&quot;https://github.com/Xappium/xappium.uitest&quot;&gt;Xappium&lt;/a&gt;&lt;/p&gt;
@@ -12,19 +132,19 @@
 &lt;p&gt;Open a folder in VSCode and create a dotnet project&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;dotnet new classlib -o XappiumAndroidTest&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Add these packages to &lt;code class=&quot;language-text&quot;&gt;XappiumAndroidTest.csproj&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c#&quot;&gt;&lt;pre class=&quot;language-c#&quot;&gt;&lt;code class=&quot;language-c#&quot;&gt;&amp;lt;ItemGroup&amp;gt;
-	&amp;lt;PackageReference Include=&amp;quot;Microsoft.NET.Test.Sdk&amp;quot; Version=&amp;quot;16.11.0&amp;quot; /&amp;gt;
-	&amp;lt;PackageReference Include=&amp;quot;Xappium.UITest&amp;quot; Version=&amp;quot;1.0.159-beta&amp;quot; /&amp;gt;
-	&amp;lt;PackageReference Include=&amp;quot;Xappium.UITest.NUnit&amp;quot; Version=&amp;quot;1.0.159-beta&amp;quot; /&amp;gt;
-	&amp;lt;PackageReference Include=&amp;quot;NUnit3TestAdapter&amp;quot; Version=&amp;quot;4.0.0&amp;quot; /&amp;gt;
-&amp;lt;/ItemGroup&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;csharp&quot;&gt;&lt;pre class=&quot;language-csharp&quot;&gt;&lt;code class=&quot;language-csharp&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ItemGroup&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+	&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;PackageReference&lt;/span&gt; Include&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Microsoft.NET.Test.Sdk&quot;&lt;/span&gt; Version&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;16.11.0&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+	&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;PackageReference&lt;/span&gt; Include&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Xappium.UITest&quot;&lt;/span&gt; Version&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;1.0.159-beta&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+	&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;PackageReference&lt;/span&gt; Include&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Xappium.UITest.NUnit&quot;&lt;/span&gt; Version&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;1.0.159-beta&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+	&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;PackageReference&lt;/span&gt; Include&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;NUnit3TestAdapter&quot;&lt;/span&gt; Version&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;4.0.0&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;ItemGroup&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Add &lt;code class=&quot;language-text&quot;&gt;uitest.json&lt;/code&gt; file in &lt;code class=&quot;language-text&quot;&gt;XappiumAndroidTest&lt;/code&gt; folder, and set it as embedded resource by adding this to the .csproj file&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c#&quot;&gt;&lt;pre class=&quot;language-c#&quot;&gt;&lt;code class=&quot;language-c#&quot;&gt;&amp;lt;ItemGroup&amp;gt;
-  &amp;lt;None Remove=&amp;quot;uitest.json&amp;quot; /&amp;gt;
-  &amp;lt;EmbeddedResource Include=&amp;quot;uitest.json&amp;quot;&amp;gt;
-  &amp;lt;CopyToOutputDirectory&amp;gt;PreserveNewest&amp;lt;/CopyToOutputDirectory&amp;gt;
-  &amp;lt;/EmbeddedResource&amp;gt;
-&amp;lt;/ItemGroup&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;csharp&quot;&gt;&lt;pre class=&quot;language-csharp&quot;&gt;&lt;code class=&quot;language-csharp&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ItemGroup&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;None&lt;/span&gt; Remove&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;uitest.json&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;EmbeddedResource&lt;/span&gt; Include&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;uitest.json&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;CopyToOutputDirectory&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;PreserveNewest&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;CopyToOutputDirectory&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;EmbeddedResource&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;ItemGroup&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The &lt;code class=&quot;language-text&quot;&gt;XappiumAndroidTest.csproj&lt;/code&gt; file should now looks like this:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;csharp&quot;&gt;&lt;pre class=&quot;language-csharp&quot;&gt;&lt;code class=&quot;language-csharp&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Project&lt;/span&gt; Sdk&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Microsoft.NET.Sdk&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
 
@@ -62,6 +182,7 @@
 	
 	&lt;span class=&quot;token property&quot;&gt;&quot;capabilities&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
 	  &lt;span class=&quot;token property&quot;&gt;&quot;avd&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Pixel_3a_Droid10&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;allowDelayAdb&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
 	  &lt;span class=&quot;token property&quot;&gt;&quot;appWaitActivity&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;*.MainActivity&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
 	  &lt;span class=&quot;token property&quot;&gt;&quot;forceEspressoRebuild&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
 	  &lt;span class=&quot;token property&quot;&gt;&quot;appium:fullReset&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;true&quot;&lt;/span&gt;
@@ -76,11 +197,12 @@
 &lt;p&gt;​		Android specific capabilities:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;avd&lt;/code&gt; : this capability is Android only, it allows Appium Server to start emulator if it is not running yet.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;allowDelayAdb&lt;/code&gt;: See &lt;a href=&quot;https://github.com/appium/appium/issues/14773&quot;&gt;https://github.com/appium/appium/issues/14773&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;appWaitActivity&lt;/code&gt;: at least this or &lt;code class=&quot;language-text&quot;&gt;appActivity&lt;/code&gt; is required by appium. It often is named &lt;code class=&quot;language-text&quot;&gt;MainActivity&lt;/code&gt;. However, it is not always the case. Check out &lt;a href=&quot;https://mauiautomation.com/determine-android-app-activity-using-adb/&quot;&gt;this post&lt;/a&gt; for more details.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;​		Espresso capabilities:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;forceEspressoRebuild&lt;/code&gt; : Whether to always enforce Espresso server rebuild, this is &lt;code class=&quot;language-text&quot;&gt;false&lt;/code&gt; by default.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;forceEspressoRebuild&lt;/code&gt; : If there are ever problems starting a session, try setting the capability &lt;code class=&quot;language-text&quot;&gt;true&lt;/code&gt; and retrying. This will rebuild a fresh Espresso Server APK. If the session is successfull, set it back to &lt;code class=&quot;language-text&quot;&gt;false&lt;/code&gt; so that it doesn’t re-install on every single test.&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;appium:fullReset&lt;/code&gt;: (default is false) this is set to &lt;code class=&quot;language-text&quot;&gt;true&lt;/code&gt; to ensure app is uninstall and reinstall on each test run, as there might be some issue if the app was already there before the test run.&lt;/p&gt;
 &lt;p&gt;More details on Espresso capabilities can be found &lt;a href=&quot;https://github.com/appium/appium-espresso-driver&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -90,14 +212,28 @@
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;csharp&quot;&gt;&lt;pre class=&quot;language-csharp&quot;&gt;&lt;code class=&quot;language-csharp&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;token namespace&quot;&gt;NUnit&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Framework&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;token namespace&quot;&gt;Xappium&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;UITest&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;AppTests&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token type-list&quot;&gt;&lt;span class=&quot;token class-name&quot;&gt;XappiumTestBase&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;token namespace&quot;&gt;XappiumAndroidTest&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token attribute&quot;&gt;&lt;span class=&quot;token class-name&quot;&gt;Test&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token return-type class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;AppLaunch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;AppTests&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token type-list&quot;&gt;&lt;span class=&quot;token class-name&quot;&gt;XappiumTestBase&lt;/span&gt;&lt;/span&gt;
     &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-
+        &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token attribute&quot;&gt;&lt;span class=&quot;token class-name&quot;&gt;Test&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token return-type class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;AppLaunch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The &lt;code class=&quot;language-text&quot;&gt;XappiumTestBase&lt;/code&gt; will do start &lt;code class=&quot;language-text&quot;&gt;AndroidDriver&lt;/code&gt; before test run and stop the driver after test done for us.&lt;/p&gt;
+&lt;p&gt;We are now ready to run our first launch test.&lt;/p&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/f0cd5bdabee6cc98367c6b36c18813fd/076ca/FirstTestFolderStructure.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 81.64556962025317%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAABYlAAAWJQFJUiTwAAACQ0lEQVQ4y41USW7bQBDkNwxFtriJ1Gbuy3AbkiOKlAFfjCAHA7kIyP+fUEG3QyMRJMSHAskBp6arunq0oiiRJCnD83zs9wfGbrfHfv8Mzwt4/avQhmHANE1MaBgWkiRjFEWFIIh4zbLWX4b2/v6Oy+WCsiyxWhnw/ZCriqIEh4OHpycdpmn/s4m+70FTSqEoCvi+j81mh6pqcDwOkLJD23Y4n1/YgsfHFR/4v4q1KIqQpinoSYRNIzFNLxiGE5Q64nSaUNcSeV5AiIJ9pY3rtXsTWp7n6PsecRzDcTYoyxqqV1D9EadxYmIiHYYRp9PINhiGfVe6liQJwjBkyfSTY9v41v2EG1YohUAjO9i2g4eHBRaLJZbLD+nXvn5KJrlCCPh+wBu3mx3Ok4QoSyj14WXTtKiqmqV3Xc8qXHd7k1Sj7lJsgiDgBfrxbUghRY62PyJNc8RxwlHKMsGI45TtuUlIFZJsCiUt6JaNykvw6+0HojSDba1Zoq6b/Jwxk12TatSMLEsRBCEsy4ZhueiEh+9jAlFKJqQsEuF1NTcrlFJiHEduDBGapoOD5yLJd2ilQlnVLPfjwPXdZnwS5rn4I9mDZa9hGjbMrQ0ncNHULaRsuRnkHTXtHtF8EEumLFKwWbLpYOPqCJ91VHXLQacu0yjO0zKDrLj2U6NQv76+crC5KYaJ4BBhkCPqRqLvFVdIpHXd8Dh2neKKaY0ukb87rmVZxhVSDplQN/mCIO8oLkKUXB1FZb6J6J1uIhpHeqeRmwl/A3kg7zbziTgfAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;First test folder structure&quot; title=&quot;First test folder structure&quot; src=&quot;/static/f0cd5bdabee6cc98367c6b36c18813fd/f058b/FirstTestFolderStructure.png&quot; srcset=&quot;/static/f0cd5bdabee6cc98367c6b36c18813fd/c26ae/FirstTestFolderStructure.png 158w,
+/static/f0cd5bdabee6cc98367c6b36c18813fd/6bdcf/FirstTestFolderStructure.png 315w,
+/static/f0cd5bdabee6cc98367c6b36c18813fd/f058b/FirstTestFolderStructure.png 630w,
+/static/f0cd5bdabee6cc98367c6b36c18813fd/076ca/FirstTestFolderStructure.png 914w&quot; sizes=&quot;(max-width: 630px) 100vw, 630px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
 &lt;p&gt;Open a terminal and start &lt;code class=&quot;language-text&quot;&gt;appium&lt;/code&gt; server by typing &lt;code class=&quot;language-text&quot;&gt;appium&lt;/code&gt;. Default address should be localhost on port &lt;code class=&quot;language-text&quot;&gt;4723&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;

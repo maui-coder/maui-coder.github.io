@@ -63,13 +63,17 @@
 	<span class="token property">"appPath"</span><span class="token operator">:</span> <span class="token string">"/Users/myuser/Downloads/Android-NativeDemoApp-0.4.0.apk"</span><span class="token punctuation">,</span>
 	<span class="token property">"deviceName"</span><span class="token operator">:</span> <span class="token string">"Pixel 3a Droid10"</span><span class="token punctuation">,</span>
 	
-	<span class="token property">"capabilities"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-	  <span class="token property">"avd"</span><span class="token operator">:</span> <span class="token string">"Pixel_3a_Droid10"</span><span class="token punctuation">,</span>
-    <span class="token property">"allowDelayAdb"</span><span class="token operator">:</span> <span class="token string">"false"</span><span class="token punctuation">,</span>
-	  <span class="token property">"appWaitActivity"</span><span class="token operator">:</span> <span class="token string">"*.MainActivity"</span><span class="token punctuation">,</span>
-	  <span class="token property">"forceEspressoRebuild"</span><span class="token operator">:</span> <span class="token string">"false"</span><span class="token punctuation">,</span>
-	  <span class="token property">"appium:fullReset"</span><span class="token operator">:</span> <span class="token string">"true"</span>
-	<span class="token punctuation">}</span>
+  <span class="token property">"capabilities"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"avd"</span><span class="token operator">:</span> <span class="token string">"Pixel_3a_Droid10"</span><span class="token punctuation">,</span>
+		<span class="token property">"allowDelayAdb"</span><span class="token operator">:</span> <span class="token string">"false"</span><span class="token punctuation">,</span>
+    <span class="token property">"appWaitActivity"</span><span class="token operator">:</span> <span class="token string">"*.MainActivity"</span><span class="token punctuation">,</span>
+    <span class="token property">"forceEspressoRebuild"</span><span class="token operator">:</span> <span class="token string">"false"</span><span class="token punctuation">,</span>
+    <span class="token property">"avdLaunchTimeout"</span><span class="token operator">:</span> <span class="token string">"120000"</span><span class="token punctuation">,</span>
+    <span class="token property">"avdReadyTimeout"</span><span class="token operator">:</span> <span class="token string">"300000"</span><span class="token punctuation">,</span>
+    <span class="token property">"espressoBuildConfig"</span><span class="token operator">:</span> <span class="token string">"{ \"additionalAndroidTestDependencies\": [ \"androidx.lifecycle:lifecycle-common:2.2.0\" ], \"additionalAppDependencies\": [ \"androidx.lifecycle:lifecycle-common:2.2.0\" ] }"</span><span class="token punctuation">,</span>
+    <span class="token property">"showGradleLog"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+    <span class="token property">"appium:fullReset"</span><span class="token operator">:</span> <span class="token string">"true"</span>
+  <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre></div>
 <p>​		Cross platfrom capabilities:</p>
 <blockquote>
@@ -80,12 +84,13 @@
 <p>​		Android specific capabilities:</p>
 <blockquote>
 <p><code class="language-text">avd</code> : this capability is Android only, it allows Appium Server to start emulator if it is not running yet.</p>
-<p><code class="language-text">allowDelayAdb</code>: See <a href="https://github.com/appium/appium/issues/14773">https://github.com/appium/appium/issues/14773</a></p>
+<p><code class="language-text">allowDelayAdb</code>:This is optional, but if you run into Failed to connect to Android emulator, set it to <code class="language-text">false</code>. See <a href="https://github.com/appium/appium/issues/14773">https://github.com/appium/appium/issues/14773</a></p>
 <p><code class="language-text">appWaitActivity</code>: at least this or <code class="language-text">appActivity</code> is required by appium. It often is named <code class="language-text">MainActivity</code>. However, it is not always the case. Check out <a href="https://mauiautomation.com/determine-android-app-activity-using-adb/">this post</a> for more details.</p>
 </blockquote>
 <p>​		Espresso capabilities:</p>
 <blockquote>
 <p><code class="language-text">forceEspressoRebuild</code> : If there are ever problems starting a session, try setting the capability <code class="language-text">true</code> and retrying. This will rebuild a fresh Espresso Server APK. If the session is successfull, set it back to <code class="language-text">false</code> so that it doesn’t re-install on every single test.</p>
+<p><code class="language-text">espressoBuildConfig</code> : <a href="https://github.com/appium/appium-espresso-driver#espresso-build-config">https://github.com/appium/appium-espresso-driver#espresso-build-config</a></p>
 <p><code class="language-text">appium:fullReset</code>: (default is false) this is set to <code class="language-text">true</code> to ensure app is uninstall and reinstall on each test run, as there might be some issue if the app was already there before the test run.</p>
 <p>More details on Espresso capabilities can be found <a href="https://github.com/appium/appium-espresso-driver">here</a></p>
 </blockquote>

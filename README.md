@@ -4,8 +4,7 @@
 From `Repository/Settings/Pages` select `gh-pages` branch, with `/root` folder
 
 
-[mauiautomation.github.io](mauiautomation.github.io)
-[mauiautomation.com](mauiautomation.com)
+[mauicoder.com](mauicoder.com)
 
 ## Deploy
 `yarn deploy`

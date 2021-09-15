@@ -5,11 +5,8 @@ module.exports = {
       name: `MAUI Coder`,
       summary: `who like to learn and building useful things.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+    description: `A blog about multiplatform UI and automation testing`,
+    siteUrl: `https://mauicoder.com/`,
   },
   plugins: [
     `gatsby-plugin-image`,

@@ -162,7 +162,7 @@ namespace XappiumAndroidTest
 }
 ```
 
-The `XappiumTestBase` will do start `AndroidDriver` before test run and stop the driver after test done for us.
+The `XappiumTestBase` will start `AndroidDriver` before test run and stop the driver after test done for us.
 
 
 
@@ -182,7 +182,7 @@ Open another terminal in VSCode and run `dotnet test`
 
 ![Open Terminal Run Dotnet Test](./OpenTerminalRunDotnetTest.png)
 
-The emulator should start and test app should also launched.
+The emulator should start and test app should also launch.
 
 <img src="./AppLaunched.png" alt="image-20210916001915084" style="zoom:30%;" />
 

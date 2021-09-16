@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MAUI Coder]]></title><description><![CDATA[A blog about multiplatform UI and automation testing]]></description><link>https://mauicoder.com</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 15 Sep 2021 23:59:32 GMT</lastBuildDate><item><title><![CDATA[Xappium UI Test tutorial for mobile automation - Android Part 2 - Page object model]]></title><description><![CDATA[Checkout Xappium docs on Page Object Model pattern. Inspect mobile app with appium desktop (see Appium Desktop overview post if this is your…]]></description><link>https://mauicoder.com/xappium-tutorial-for-android-testing-part-2-page-object-model/</link><guid isPermaLink="false">https://mauicoder.com/xappium-tutorial-for-android-testing-part-2-page-object-model/</guid><pubDate>Wed, 15 Sep 2021 22:23:15 GMT</pubDate><content:encoded>&lt;img src=&quot;https://xappium.com/images/xappium-bot.png&quot; alt=&quot;img&quot; style=&quot;zoom:50%;&quot;&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MAUI Coder]]></title><description><![CDATA[A blog about multiplatform UI and automation testing]]></description><link>https://mauicoder.com</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 16 Sep 2021 13:43:05 GMT</lastBuildDate><item><title><![CDATA[Xappium UI Test for mobile automation - Android Part 2 - Page object model]]></title><description><![CDATA[Checkout Xappium docs on Page Object Model pattern. Inspect mobile app with appium desktop (see Appium Desktop overview post if this is your…]]></description><link>https://mauicoder.com/xappium-for-android-testing-part-2-page-object-model/</link><guid isPermaLink="false">https://mauicoder.com/xappium-for-android-testing-part-2-page-object-model/</guid><pubDate>Wed, 15 Sep 2021 22:23:15 GMT</pubDate><content:encoded>&lt;img src=&quot;https://xappium.com/images/xappium-bot.png&quot; alt=&quot;img&quot; style=&quot;zoom:50%;&quot;&gt;
 &lt;br/&gt;
 &lt;p&gt;Checkout &lt;a href=&quot;https://xappium.com/docs/page-object-model.html&quot;&gt;Xappium docs on Page Object Model&lt;/a&gt; pattern.&lt;/p&gt;
 &lt;h2&gt;Inspect mobile app with appium desktop&lt;/h2&gt;
@@ -118,7 +118,169 @@ Start an inspector session with the following capabilities:&lt;/p&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;This can be confirm by searching for element with AccessibilityID Home. And we found one element, which is the Home tab button.&lt;/p&gt;
 &lt;h2&gt;Writing HomePage object&lt;/h2&gt;
-&lt;p&gt;Add &lt;code class=&quot;language-text&quot;&gt;HomePage.cs&lt;/code&gt; to the &lt;code class=&quot;language-text&quot;&gt;XappiumAndroidTest&lt;/code&gt; folder.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Xappium UI Test tutorial for mobile automation - Android Part 1 - Setup Project]]></title><description><![CDATA[https://xappium.com/ In this tutorial, we will cover how to test Android application using Xappium You will need: VSCode and dotnet…]]></description><link>https://mauicoder.com/xappium-tutorial-for-android-testing-part-1-setup/</link><guid isPermaLink="false">https://mauicoder.com/xappium-tutorial-for-android-testing-part-1-setup/</guid><pubDate>Wed, 15 Sep 2021 16:20:15 GMT</pubDate><content:encoded>&lt;img src=&quot;https://xappium.com/images/xappium-bot.png&quot; alt=&quot;img&quot; style=&quot;zoom:50%;&quot;&gt;
+&lt;p&gt;Add &lt;code class=&quot;language-text&quot;&gt;HomePage.cs&lt;/code&gt; to the &lt;code class=&quot;language-text&quot;&gt;XappiumAndroidTest&lt;/code&gt; folder:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;csharp&quot;&gt;&lt;pre class=&quot;language-csharp&quot;&gt;&lt;code class=&quot;language-csharp&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;token namespace&quot;&gt;Xappium&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;UITest&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;token namespace&quot;&gt;Xappium&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;UITest&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Pages&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;token namespace&quot;&gt;XappiumAndroidTest&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;HomePage&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token type-list&quot;&gt;&lt;span class=&quot;token class-name&quot;&gt;BasePage&lt;/span&gt;&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;token return-type class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;string&lt;/span&gt;&lt;/span&gt; Trait &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Home-screen&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//(1)&lt;/span&gt;
+
+		&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token return-type class-name&quot;&gt;LoginPage&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;OpenLoginPage&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+			Engine&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Tap&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Login&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//(2)&lt;/span&gt;
+			&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token constructor-invocation class-name&quot;&gt;LoginPage&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;(1) : BasePage from Xappium require a &lt;code class=&quot;language-text&quot;&gt;Trait&lt;/code&gt; to be given. A Trait can be any element that exists on the screen, Trait is used to assert if the page is visible on screen or not.&lt;/p&gt;
+&lt;p&gt;(2) : Xappium Engine provide us a Tap method where it takes in an element Accessability ID and tap on it. (Automation ID in Xamarin).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Add &lt;code class=&quot;language-text&quot;&gt;LoginPage.cs&lt;/code&gt; to the &lt;code class=&quot;language-text&quot;&gt;XappiumAndroidTest&lt;/code&gt; folder:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;csharp&quot;&gt;&lt;pre class=&quot;language-csharp&quot;&gt;&lt;code class=&quot;language-csharp&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;token namespace&quot;&gt;Xappium&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;UITest&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;token namespace&quot;&gt;Xappium&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;UITest&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Pages&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;token namespace&quot;&gt;XappiumAndroidTest&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;LoginPage&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token type-list&quot;&gt;&lt;span class=&quot;token class-name&quot;&gt;BasePage&lt;/span&gt;&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;token return-type class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;string&lt;/span&gt;&lt;/span&gt; Trait &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Login-screen&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+		&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token return-type class-name&quot;&gt;LoginPage&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;EnterEmail&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;string&lt;/span&gt;&lt;/span&gt; email&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+			Engine&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;EnterText&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;input-email&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; email&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+			&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+		&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token return-type class-name&quot;&gt;LoginPage&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;EnterPassword&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;string&lt;/span&gt;&lt;/span&gt; password&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+			Engine&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;EnterText&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;input-password&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; password&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+			&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+		&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token return-type class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;TapLoginButton&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+			Engine&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Tap&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;button-LOGIN&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Similarly to HomePage, for LoginPage we also have to provide a Trait, and there are methods corresponding to user actions on LoginPage which are use to login. All of these AccessabilityID can be found via Appium Desktop.&lt;/p&gt;
+&lt;p&gt;Add &lt;code class=&quot;language-text&quot;&gt;LoginTest&lt;/code&gt; to our &lt;code class=&quot;language-text&quot;&gt;AppTests.cs&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;csharp&quot;&gt;&lt;pre class=&quot;language-csharp&quot;&gt;&lt;code class=&quot;language-csharp&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;token namespace&quot;&gt;NUnit&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Framework&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;token namespace&quot;&gt;Xappium&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;UITest&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;token namespace&quot;&gt;XappiumAndroidTest&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;AppTests&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token type-list&quot;&gt;&lt;span class=&quot;token class-name&quot;&gt;XappiumTestBase&lt;/span&gt;&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token attribute&quot;&gt;&lt;span class=&quot;token class-name&quot;&gt;Test&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token return-type class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;AppLaunch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+		&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+		&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token attribute&quot;&gt;&lt;span class=&quot;token class-name&quot;&gt;Test&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token return-type class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;LoginTest&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;token class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt;&lt;/span&gt; loginPage &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token constructor-invocation class-name&quot;&gt;HomePage&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;OpenLoginPage&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+			loginPage
+				&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;EnterEmail&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;helloxappium@maui.com&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+				&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;EnterPassword&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;csharp&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+				&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;TapLoginButton&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+			
+			Engine&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Screenshot&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;loginTestScreenshot&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;By default, Xappium takes screenshot on each AssertOnPage, we can also take additional screenshot using &lt;code class=&quot;language-text&quot;&gt;Engine.Screenshot(&quot;screenshotName&quot;)&lt;/code&gt; method.&lt;/p&gt;
+&lt;h2&gt;Run test&lt;/h2&gt;
+&lt;p&gt;Make sure to Quit Session and Close Inspector on Appium Desktop&lt;/p&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/4df2e22b1b6bc12a4baeca1a1c76b8ef/fe9e8/QuitSessionAndCloseInspector.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 31.645569620253163%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA9klEQVQY042QTWrDMBCFfbxepScr9BSBrtK0URbdZGFiJfUflhLZluTYBn9FJg5klQo+3jyhGUYv2grB5lsQ/2x4fc94eZuYhg7vPUmSUJYlXdfRtu0d5z26LOnXaw6rFV+7HWK7RQhBdJSS01GSHhM+9zkfe81ZK5TSZFlGURRopVFKPVBVFTqOyeKYRErkjeikPRvpqIxDFb/kpwPGGOq6pmmaWRd/5+aNtTTWPmwfmTYM81jn56/M6txTrLU4a/HOzfEsROM40NaGNE3J85zL5cJ/zjAMXK/XOZbQu2gULsdxnIMPdXg4TdNT+r6f+5bBwQf+AMbexru0izDcAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;Quit Session And Close Inspector&quot; title=&quot;Quit Session And Close Inspector&quot; src=&quot;/static/4df2e22b1b6bc12a4baeca1a1c76b8ef/f058b/QuitSessionAndCloseInspector.png&quot; srcset=&quot;/static/4df2e22b1b6bc12a4baeca1a1c76b8ef/c26ae/QuitSessionAndCloseInspector.png 158w,
+/static/4df2e22b1b6bc12a4baeca1a1c76b8ef/6bdcf/QuitSessionAndCloseInspector.png 315w,
+/static/4df2e22b1b6bc12a4baeca1a1c76b8ef/f058b/QuitSessionAndCloseInspector.png 630w,
+/static/4df2e22b1b6bc12a4baeca1a1c76b8ef/40601/QuitSessionAndCloseInspector.png 945w,
+/static/4df2e22b1b6bc12a4baeca1a1c76b8ef/fe9e8/QuitSessionAndCloseInspector.png 1146w&quot; sizes=&quot;(max-width: 630px) 100vw, 630px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;p&gt;or you might get this error when run test&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;System.InvalidOperationException &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; A new session could not be created. Details&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; An unknown server-side error occurred while processing the command. Original error&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; java.lang.ExceptionInInitializerError.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;As we use &lt;code class=&quot;language-text&quot;&gt;espresso&lt;/code&gt; for our test, but use &lt;code class=&quot;language-text&quot;&gt;uiautomator2&lt;/code&gt; for Appium Desktop. You can use &lt;code class=&quot;language-text&quot;&gt;espresso&lt;/code&gt; for Appium Desktop with appPackage as an additional parameter.&lt;/p&gt;
+&lt;p&gt;Open terminal and run &lt;code class=&quot;language-text&quot;&gt;dotnet test&lt;/code&gt; .&lt;/p&gt;
+&lt;p&gt;Test should now run and passed!&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0ef4832fb3a9367a9bdb4cabc5172841/c95f0/TestRunSuccess.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 17.088607594936708%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAoklEQVQI1y3MW66DMAxFUcZR4gCFODcljzakMP+R7Yroflg+WtbxUErhui5SzuRSaK1xW62V8zwJIZBS4lNr9/seY2SeZ0QEa20f+d9D2iPtOHiXNzkmzu+XnDOtHt3vsjpFtw3nHMs8Mz5GxJj+UIwgo8HeWYThuXtc3tm88swBFzwa/tBP6u69x5eIqwm/B1Z1GF2x64KdJqyuTC9FtqXbDyDQV9Nvi1k7AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;image-20210916212255743&quot;
+        title=&quot;image-20210916212255743&quot;
+        src=&quot;/static/0ef4832fb3a9367a9bdb4cabc5172841/f058b/TestRunSuccess.png&quot;
+        srcset=&quot;/static/0ef4832fb3a9367a9bdb4cabc5172841/c26ae/TestRunSuccess.png 158w,
+/static/0ef4832fb3a9367a9bdb4cabc5172841/6bdcf/TestRunSuccess.png 315w,
+/static/0ef4832fb3a9367a9bdb4cabc5172841/f058b/TestRunSuccess.png 630w,
+/static/0ef4832fb3a9367a9bdb4cabc5172841/40601/TestRunSuccess.png 945w,
+/static/0ef4832fb3a9367a9bdb4cabc5172841/78612/TestRunSuccess.png 1260w,
+/static/0ef4832fb3a9367a9bdb4cabc5172841/c95f0/TestRunSuccess.png 1842w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Screenshot took by Appium test run can be found in &lt;code class=&quot;language-text&quot;&gt;bin/Debug/net5.0/Screeshots&lt;/code&gt; folder&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a04c4936ea2c8372030f9c135391898f/d8fc6/TestRunScreenshot.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 79.11392405063292%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAABYlAAAWJQFJUiTwAAADJUlEQVQ4y4WUTW8bVRSG5yfEH1FiosQz/hjb4+/BHo8du6ZKooIEKGvWhU1UVRChRoQ4QZBV1lRIqAtIqWih2UKADTtExQIJhEQrUUimSZ06tnGcpKHwoHtNIowSMdKrc+9o5tF7zj3nKvFYjGoph2nmyGSyJBJJgsEwoZAudbwWcWxsjNHRURnPkqKHdSqFNEYsjt8fIBAInQCO9V+g3+9H0zRUVe2TeK9EI1EmyyaGEe/7+SyHQsPDwwwMDODxeE7kdrsYHBxE0fUIBTOJrkf7QKcBhYuhoSGmp6e5evVdlhYXeWtpiVqtxsrKCjMzM8JhhAvVHPF4oi/d04AiTeFseXkZ8bT29unuH9Du7Mn95+vrooYRSvk02Yz5vw4F0OVysbCwAEdd6vd+oLHt0NjagCeH3P7kJkpEj8gaplLpE4enSQJVFZfbw+KVWWhs8PDn79nd2qS5vQl/7LO2eg0lEolQtrPkrQLRqIGmBSVY00L/xKBcyyiAHi+Lr1+Gxx3qzRat3QbtdkumLIHBkE7hmRLVc1VK42Xi8SSGkSCRSEmlUhnpXrxTJXCQ2uwlnjS2qG9u0GnssPuoDkeHrF0XDnWDSrnAcy8+z9TkBWy7hG2PUyyWpfJ5G9PMk06baKqG2+NlfvYyv287PPj1N7adTRzH4aC7x6cfvI+SiKcx8xaVqUmqlfMUCuNYVlGCLKtEMpnFMFIYRpJAICBrWLvymkyxebtG+72XaF67CI/brN34EEVTg5j5DBMvPMvUxBS5nEUymcI0nyabNQmHdVlLIVU4dLuZm5uj1eni/HIX5+6PbN77iU53n9XrH6EEtRCxVJLixHnKpTKWZcu5FlHAY7F4X9uIiZh7Y55295D7zkOcnRb3H+zQ3jvgxse3UMTH1WIGu1iSgJ7yWFYB2y7KvZii3olruF0u5t9c4E/gUbNNu9Ol3mhy9Bes3rzVm+VzdpqCVSAcjqCqgX+1S6+Fji8Jccper5eLL7/CN3e+47Mvvupp/Uu+/vYOr77zNkpYtE0mxXi5IlMVvXjWxBxfDj6fT14QQiMjI3K+/WN+nvL5+Bss6m8OHSb2CAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Test run screen shot&quot;
+        title=&quot;Test run screen shot&quot;
+        src=&quot;/static/a04c4936ea2c8372030f9c135391898f/f058b/TestRunScreenshot.png&quot;
+        srcset=&quot;/static/a04c4936ea2c8372030f9c135391898f/c26ae/TestRunScreenshot.png 158w,
+/static/a04c4936ea2c8372030f9c135391898f/6bdcf/TestRunScreenshot.png 315w,
+/static/a04c4936ea2c8372030f9c135391898f/f058b/TestRunScreenshot.png 630w,
+/static/a04c4936ea2c8372030f9c135391898f/40601/TestRunScreenshot.png 945w,
+/static/a04c4936ea2c8372030f9c135391898f/78612/TestRunScreenshot.png 1260w,
+/static/a04c4936ea2c8372030f9c135391898f/d8fc6/TestRunScreenshot.png 2052w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Xappium UI Test for mobile automation - Android Part 1 - Setup Project]]></title><description><![CDATA[https://xappium.com/ In this tutorial, we will cover how to test Android application using Xappium You will need: VSCode and dotnet…]]></description><link>https://mauicoder.com/xappium-for-android-testing-part-1-setup/</link><guid isPermaLink="false">https://mauicoder.com/xappium-for-android-testing-part-1-setup/</guid><pubDate>Wed, 15 Sep 2021 16:20:15 GMT</pubDate><content:encoded>&lt;img src=&quot;https://xappium.com/images/xappium-bot.png&quot; alt=&quot;img&quot; style=&quot;zoom:50%;&quot;&gt;
 &lt;p&gt;&lt;a href=&quot;https://xappium.com/&quot;&gt;https://xappium.com/&lt;/a&gt;&lt;/p&gt;
 &lt;br/&gt;
 &lt;p&gt;In this tutorial, we will cover how to test Android application using &lt;a href=&quot;https://github.com/Xappium/xappium.uitest&quot;&gt;Xappium&lt;/a&gt;&lt;/p&gt;
@@ -185,9 +347,6 @@ Start an inspector session with the following capabilities:&lt;/p&gt;
 		&lt;span class=&quot;token property&quot;&gt;&quot;allowDelayAdb&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;token property&quot;&gt;&quot;appWaitActivity&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;*.MainActivity&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;token property&quot;&gt;&quot;forceEspressoRebuild&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;token property&quot;&gt;&quot;avdLaunchTimeout&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;120000&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;token property&quot;&gt;&quot;avdReadyTimeout&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;300000&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;token property&quot;&gt;&quot;espressoBuildConfig&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;{ \&quot;additionalAndroidTestDependencies\&quot;: [ \&quot;androidx.lifecycle:lifecycle-common:2.2.0\&quot; ], \&quot;additionalAppDependencies\&quot;: [ \&quot;androidx.lifecycle:lifecycle-common:2.2.0\&quot; ] }&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;token property&quot;&gt;&quot;showGradleLog&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;true&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;token property&quot;&gt;&quot;appium:fullReset&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;true&quot;&lt;/span&gt;
   &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
@@ -207,7 +366,6 @@ Start an inspector session with the following capabilities:&lt;/p&gt;
 &lt;p&gt;​		Espresso capabilities:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;forceEspressoRebuild&lt;/code&gt; : If there are ever problems starting a session, try setting the capability &lt;code class=&quot;language-text&quot;&gt;true&lt;/code&gt; and retrying. This will rebuild a fresh Espresso Server APK. If the session is successfull, set it back to &lt;code class=&quot;language-text&quot;&gt;false&lt;/code&gt; so that it doesn’t re-install on every single test.&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;espressoBuildConfig&lt;/code&gt; : &lt;a href=&quot;https://github.com/appium/appium-espresso-driver#espresso-build-config&quot;&gt;https://github.com/appium/appium-espresso-driver#espresso-build-config&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;appium:fullReset&lt;/code&gt;: (default is false) this is set to &lt;code class=&quot;language-text&quot;&gt;true&lt;/code&gt; to ensure app is uninstall and reinstall on each test run, as there might be some issue if the app was already there before the test run.&lt;/p&gt;
 &lt;p&gt;More details on Espresso capabilities can be found &lt;a href=&quot;https://github.com/appium/appium-espresso-driver&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;

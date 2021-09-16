@@ -23,11 +23,10 @@
 <span class="token operator">&lt;</span><span class="token operator">/</span>ItemGroup<span class="token operator">></span></code></pre></div>
 <p>Add <code class="language-text">uitest.json</code> file in <code class="language-text">XappiumAndroidTest</code> folder, and set it as embedded resource by adding this to the .csproj file</p>
 <div class="gatsby-highlight" data-language="csharp"><pre class="language-csharp"><code class="language-csharp"><span class="token operator">&lt;</span>ItemGroup<span class="token operator">></span>
-  <span class="token operator">&lt;</span><span class="token class-name">None</span> Remove<span class="token operator">=</span><span class="token string">"uitest.json"</span> <span class="token operator">/</span><span class="token operator">></span>
-  <span class="token operator">&lt;</span><span class="token class-name">EmbeddedResource</span> Include<span class="token operator">=</span><span class="token string">"uitest.json"</span><span class="token operator">></span>
-  <span class="token operator">&lt;</span>CopyToOutputDirectory<span class="token operator">></span>PreserveNewest<span class="token operator">&lt;</span><span class="token operator">/</span>CopyToOutputDirectory<span class="token operator">></span>
-  <span class="token operator">&lt;</span><span class="token operator">/</span>EmbeddedResource<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>ItemGroup<span class="token operator">></span></code></pre></div>
+    <span class="token operator">&lt;</span><span class="token class-name">None</span> Remove<span class="token operator">=</span><span class="token string">"uitest.json"</span> <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token class-name">EmbeddedResource</span> Include<span class="token operator">=</span><span class="token string">"uitest.json"</span> <span class="token operator">/</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>ItemGroup<span class="token operator">></span>
+</code></pre></div>
 <p>The <code class="language-text">XappiumAndroidTest.csproj</code> file should now looks like this:</p>
 <div class="gatsby-highlight" data-language="csharp"><pre class="language-csharp"><code class="language-csharp"><span class="token operator">&lt;</span><span class="token class-name">Project</span> Sdk<span class="token operator">=</span><span class="token string">"Microsoft.NET.Sdk"</span><span class="token operator">></span>
 
@@ -45,10 +44,9 @@
 
     <span class="token operator">&lt;</span>ItemGroup<span class="token operator">></span>
       <span class="token operator">&lt;</span><span class="token class-name">None</span> Remove<span class="token operator">=</span><span class="token string">"uitest.json"</span> <span class="token operator">/</span><span class="token operator">></span>
-      <span class="token operator">&lt;</span><span class="token class-name">EmbeddedResource</span> Include<span class="token operator">=</span><span class="token string">"uitest.json"</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>CopyToOutputDirectory<span class="token operator">></span>PreserveNewest<span class="token operator">&lt;</span><span class="token operator">/</span>CopyToOutputDirectory<span class="token operator">></span>
-      <span class="token operator">&lt;</span><span class="token operator">/</span>EmbeddedResource<span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token class-name">EmbeddedResource</span> Include<span class="token operator">=</span><span class="token string">"uitest.json"</span> <span class="token operator">/</span><span class="token operator">></span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>ItemGroup<span class="token operator">></span>
+
 
 <span class="token operator">&lt;</span><span class="token operator">/</span>Project<span class="token operator">></span>
 </code></pre></div>

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Xappium UI Test tutorial for mobile automation - Android Part 1 - Setup Project"
+title: "Xappium UI Test for mobile automation - Android Part 1 - Setup Project"
 subtitle: "Xappium UI Test tutorial for mobile automation - Android Part 1 - Setup Project"
 date: '2021-09-16 00:20:15'
 background: '/img/bg-about.jpg'
@@ -107,9 +107,6 @@ Add the following content to the `uitest.json`
 		"allowDelayAdb": "false",
     "appWaitActivity": "*.MainActivity",
     "forceEspressoRebuild": "false",
-    "avdLaunchTimeout": "120000",
-    "avdReadyTimeout": "300000",
-    "espressoBuildConfig": "{ \"additionalAndroidTestDependencies\": [ \"androidx.lifecycle:lifecycle-common:2.2.0\" ], \"additionalAppDependencies\": [ \"androidx.lifecycle:lifecycle-common:2.2.0\" ] }",
     "showGradleLog": "true",
     "appium:fullReset": "true"
   }
@@ -135,8 +132,6 @@ Add the following content to the `uitest.json`
 ​		Espresso capabilities:
 
 > `forceEspressoRebuild` : If there are ever problems starting a session, try setting the capability `true` and retrying. This will rebuild a fresh Espresso Server APK. If the session is successfull, set it back to `false` so that it doesn't re-install on every single test.
->
-> `espressoBuildConfig` : https://github.com/appium/appium-espresso-driver#espresso-build-config
 >
 > `appium:fullReset`: (default is false) this is set to `true` to ensure app is uninstall and reinstall on each test run, as there might be some issue if the app was already there before the test run.
 >
